@@ -1,0 +1,61 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+    x:Class="University_Feeds.Page8"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="images/back1.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Style="{StaticResource PhoneTextNormalStyle}" Height="29">
+            	<Run Text="Add Department"/>
+            	<LineBreak/>
+            	<Run/>
+            </TextBlock>
+            <TextBox HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="456"/>
+        </StackPanel>
+
+        <Grid x:Name="ContentPanel" Margin="10,84,14,34" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="17*"/>
+                <ColumnDefinition Width="59*"/>
+            </Grid.ColumnDefinitions>
+            <RadioButton Content="Semester 1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="26.667" FontWeight="Bold" Grid.ColumnSpan="2"/>
+            <RadioButton Content="Semester 2" HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top" FontSize="26.667" FontWeight="Bold" Grid.ColumnSpan="2"/>
+            <RadioButton Content="Semester 3" HorizontalAlignment="Left" Margin="10,159,0,0" VerticalAlignment="Top" FontSize="26.667" FontWeight="Bold" Grid.ColumnSpan="2"/>
+            <RadioButton Content="Semester 4" HorizontalAlignment="Left" Margin="10,236,0,0" VerticalAlignment="Top" FontSize="26.667" FontWeight="Bold" Grid.ColumnSpan="2"/>
+            <RadioButton Content="Semester 5" HorizontalAlignment="Left" Margin="10,313,0,0" VerticalAlignment="Top" FontSize="26.667" FontWeight="Bold" Grid.ColumnSpan="2"/>
+            <RadioButton Content="Semester 6" HorizontalAlignment="Left" Margin="10,390,0,0" VerticalAlignment="Top" FontSize="26.667" FontWeight="Bold" Grid.ColumnSpan="2"/>
+            <RadioButton Content="Semester 7" HorizontalAlignment="Left" Margin="10,471,0,0" VerticalAlignment="Top" FontSize="26.667" FontWeight="Bold" Grid.ColumnSpan="2"/>
+            <RadioButton Content="Semester 8" HorizontalAlignment="Left" Margin="10,548,0,0" VerticalAlignment="Top" FontSize="26.667" FontWeight="Bold" Grid.ColumnSpan="2"/>
+            <Button Content="Next" Margin="195,552,0,0" VerticalAlignment="Top" Background="#FFF37272" Grid.Column="1">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <ec:NavigateToPageAction TargetPage="/AddSub.xaml"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            <Image HorizontalAlignment="Left" Height="26" Margin="317,577,0,0" VerticalAlignment="Top" Width="37" Source="images/next.png" Grid.Column="1"/>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

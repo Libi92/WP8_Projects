@@ -1,0 +1,54 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+    x:Class="University_Feeds.Page6"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="images/back1.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="University Feeds" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="Sign Up" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBlock HorizontalAlignment="Left" Height="45" Margin="10,59,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="147" FontSize="26.667" Foreground="#FFF9F033"/>
+            <TextBlock HorizontalAlignment="Left" Height="45" Margin="10,133,0,0" TextWrapping="Wrap" Text="email" VerticalAlignment="Top" Width="147" FontSize="26.667" Foreground="#FFF9F033"/>
+            <TextBlock HorizontalAlignment="Left" Height="45" Margin="10,207,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="147" FontSize="26.667" Foreground="#FFF9F033"/>
+            <TextBlock HorizontalAlignment="Left" Height="45" Margin="10,278,0,0" TextWrapping="Wrap" Text="Univerity" VerticalAlignment="Top" Width="147" FontSize="26.667" Foreground="#FFF9F033"/>
+            <TextBox HorizontalAlignment="Left" Height="71" Margin="162,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284"/>
+            <TextBox HorizontalAlignment="Left" Height="71" Margin="162,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284"/>
+            <TextBox HorizontalAlignment="Left" Height="71" Margin="162,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284"/>
+            <Button Content="Sign Up" HorizontalAlignment="Left" Margin="162,433,0,0" VerticalAlignment="Top" Background="#FFF78181">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <ec:NavigateToPageAction TargetPage="/login.xaml"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            <PasswordBox HorizontalAlignment="Left" Margin="162,190,0,0" VerticalAlignment="Top" Width="284"/>
+
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

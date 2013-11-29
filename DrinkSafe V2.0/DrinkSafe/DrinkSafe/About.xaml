@@ -1,0 +1,49 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="DrinkSafe.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+    	<Grid.Background>
+    		<ImageBrush Stretch="Fill" ImageSource="/back2.jpg"/>
+    	</Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="Drink Safe" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="About" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,10" Background="#7F000000">
+        	<TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Drink Safe" VerticalAlignment="Top" Height="36" Width="159" FontSize="26.667" FontWeight="Bold"/>
+        	<TextBlock HorizontalAlignment="Left" Margin="10,51,0,0" TextWrapping="Wrap" Text="1.0.2.0" VerticalAlignment="Top"/>
+        	<TextBlock HorizontalAlignment="Left" Margin="10,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="189" Width="436">
+        		<Run Text="This application  help you most to calculate your blood alcohol content. And it also give suggestions to have a safe drive after the party. So have your drinks at safety limit and drive home safely"/>
+        		<Run Text="y."/>
+        		<LineBreak/>
+        		<Run/>
+        		<LineBreak/>
+        		<Run Text="You can give your suggestions and reviews at"/>
+        	</TextBlock>
+        	<HyperlinkButton Content="libi92@yahoo.com" HorizontalAlignment="Left" Margin="10,292,0,0" VerticalAlignment="Top" Foreground="Yellow"/>
+
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

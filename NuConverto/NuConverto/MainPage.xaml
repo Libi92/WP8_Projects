@@ -1,0 +1,273 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="NuConverto.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+	<phone:PhoneApplicationPage.Background>
+		<ImageBrush Stretch="Fill" ImageSource="/back1.jpg"/>
+	</phone:PhoneApplicationPage.Background>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+
+        <!-- LOCALIZATION NOTE:
+            To localize the displayed strings copy their values to appropriately named
+            keys in the app's neutral language resource file (AppResources.resx) then
+            replace the hard-coded text value between the attributes' quotation marks
+            with the binding clause whose path points to that string name.
+
+            For example:
+
+                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
+
+            This binding points to the template's string resource named "ApplicationTitle".
+
+            Adding supported languages in the Project Properties tab will create a
+            new resx file per language that can carry the translated values of your
+            UI strings. The binding in these examples will cause the value of the
+            attributes to be drawn from the .resx file that matches the
+            CurrentUICulture of the app at run time.
+         -->
+
+        <!--Pivot Control-->
+        <phone:Pivot Title="NuConverto">
+        	<phone:Pivot.Background>
+        		<ImageBrush Stretch="Fill" ImageSource="/back1.jpg"/>
+        	</phone:Pivot.Background>
+            <!--Pivot item one-->
+            <phone:PivotItem x:Name="Length" Header="Length">
+            	<Grid HorizontalAlignment="Left" Height="603" VerticalAlignment="Top" Width="456">
+            		<TextBlock x:Name="txtmtr" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Metre" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667"/>
+                    <TextBox x:Name="tbmtr" HorizontalAlignment="Left" Height="72" Margin="166,-16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number" TextChanged="tbmtr_chngd" MaxLength="6"/>
+            		<TextBlock x:Name="txtkmtr" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,60,0,0">
+            			<Run Text="Kilometre"/>
+            			<LineBreak/>
+            			<Run/>
+            		</TextBlock>
+            		<TextBox x:Name="tbkmtr" HorizontalAlignment="Left" Height="72" Margin="166,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number" TextChanged="tbkmtr_chngd" MaxLength="6"/>
+            		<TextBlock x:Name="txtyrd" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Yard" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,119,0,0"/>
+                    <TextBox x:Name="tbyrd" HorizontalAlignment="Left" Height="72" Margin="166,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number" TextChanged="tbyrd_chngd" MaxLength="6"/>
+            		<TextBlock x:Name="txtmyl" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,180,0,0">
+            			<Run Text="Mile"/>
+            			<LineBreak/>
+            			<Run/>
+            		</TextBlock>
+                    <TextBox x:Name="tbmyl" HorizontalAlignment="Left" Height="72" Margin="166,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number" TextChanged="tbmyl_chngd" MaxLength="6"/>
+            		<TextBlock x:Name="txtin" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Inch" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,240,0,0"/>
+                    <TextBox x:Name="tbin" HorizontalAlignment="Left" Height="72" Margin="166,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number" TextChanged="tbin_chngd" MaxLength="6"/>
+            		<TextBlock x:Name="txtft" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Foot" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,300,0,0"/>
+                    <TextBox x:Name="tbft" HorizontalAlignment="Left" Height="72" Margin="166,284,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number" TextChanged="tbft_chngd" MaxLength="6"/>
+            		<TextBlock x:Name="txtnm" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Nautical Mile" VerticalAlignment="Top" Height="47" Width="166" FontSize="26.667" Margin="0,360,0,0"/>
+                    <TextBox x:Name="tbnm" HorizontalAlignment="Left" Height="72" Margin="166,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number" TextChanged="tbnm_chngd" MaxLength="6"/>
+            		<TextBlock x:Name="txtflg" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Furlong" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,420,0,0"/>
+            		<TextBox x:Name="tbflg" HorizontalAlignment="Left" Height="72" Margin="166,404,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number" TextChanged="tbflg_chngd" MaxLength="6"/>
+                </Grid>
+                <!--Double line list with text wrapping-->
+            </phone:PivotItem>
+            <phone:PivotItem x:Name="Mass" Header="Mass">
+            	<Grid Margin="0,0,308,556">
+            		<TextBlock x:Name="txtgm" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667">
+            			<Run Text="Gram"/>
+            			<LineBreak/>
+            			<Run/>
+            		</TextBlock>
+            		<TextBox x:Name="tbgm" HorizontalAlignment="Left" Height="72" Margin="166,-16,-298,-9" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+                    <TextBlock x:Name="txtkg" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,60,0,-60">
+            			<Run Text="Kilogram"/>
+            			<LineBreak/>
+            			<Run/>
+                    </TextBlock>
+                    <TextBox x:Name="tbkg" HorizontalAlignment="Left" Height="72" Margin="166,44,-298,-69" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtpd" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,120,0,-120" Text="Pound"/>
+            		<TextBox x:Name="tbpd" HorizontalAlignment="Left" Height="72" Margin="166,104,-298,-129" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+                    <TextBlock x:Name="txtoz" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,180,0,-180" Text="Ounce"/>
+                    <TextBox x:Name="tboz" HorizontalAlignment="Left" Height="72" Margin="166,164,-298,-189" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+                    <TextBlock x:Name="txttn" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,240,0,-240" Text="Tonne"/>
+                    <TextBox x:Name="tbtn" HorizontalAlignment="Left" Height="72" Margin="166,224,-298,-249" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtct" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,300,0,-300">
+            			<Run Text="Carat"/>
+            			<LineBreak/>
+            			<Run/>
+            		</TextBlock>
+            		<TextBox x:Name="tbct" HorizontalAlignment="Left" Height="72" Margin="166,284,-298,-309" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtgrn" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,360,0,-360">
+            			<Run Text="Grain"/>
+            			<LineBreak/>
+            			<Run/>
+            			<LineBreak/>
+            			<Run/>
+            		</TextBlock>
+            		<TextBox x:Name="tbgrn" HorizontalAlignment="Left" Height="72" Margin="166,344,-298,-369" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            	</Grid>
+            </phone:PivotItem>
+
+            <!--Pivot item two-->
+            <phone:PivotItem x:Name="Temperature" Header="Temperature">
+            	<Grid Margin="0,0,308,556">
+            		<TextBlock x:Name="txtcs" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Text="Celsius"/>
+            		<TextBox x:Name="tbcs" HorizontalAlignment="Left" Height="72" Margin="166,-16,-298,-9" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtfh" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,60,0,-60">
+            			<Run Text="Fahrenheit"/>
+            			<LineBreak/>
+            			<Run/>
+            			<LineBreak/>
+            			<Run/>
+            		</TextBlock>
+            		<TextBox x:Name="tbfh" HorizontalAlignment="Left" Height="72" Margin="166,44,-298,-69" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtkl" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,120,0,-120" Text="Kelvin"/>
+            		<TextBox x:Name="tbkl" HorizontalAlignment="Left" Height="72" Margin="166,104,-298,-129" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            	</Grid>
+                <!--Double line list no text wrapping-->
+            </phone:PivotItem>
+            <phone:PivotItem x:Name="Area" Header="Area">
+            	<Grid Margin="0,0,308,556">
+            		<TextBlock x:Name="txtsm" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="161" FontSize="26.667" Text="Square Metre" Margin="0,0,-13,0"/>
+            		<TextBox x:Name="tbsm" HorizontalAlignment="Left" Height="72" Margin="183,-16,-315,-9" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtsk" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="197" FontSize="26.667" Margin="0,60,-49,-60" Text="Square Kilomtre"/>
+            		<TextBox x:Name="tbsk" HorizontalAlignment="Left" Height="72" Margin="183,44,-315,-69" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txthct" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,120,0,-120" Text="Hectare"/>
+            		<TextBox x:Name="tbhct" HorizontalAlignment="Left" Height="72" Margin="183,104,-315,-129" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtacr" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,180,0,-180" Text="Acre"/>
+            		<TextBox x:Name="tbacr" HorizontalAlignment="Left" Height="72" Margin="183,164,-315,-189" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            	</Grid>
+            </phone:PivotItem>
+            <phone:PivotItem x:Name="Volume" Header="Volume">
+            	<Grid Margin="0,0,308,556">
+            		<TextBlock x:Name="txtm3" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="203" FontSize="26.667" Text="Cubic Metre" Margin="0,0,-55,0"/>
+            		<TextBox x:Name="tbm3" HorizontalAlignment="Left" Height="72" Margin="166,-16,-298,-9" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtlt" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,60,0,-60" Text="Liter"/>
+            		<TextBox x:Name="tblt" HorizontalAlignment="Left" Height="72" Margin="166,44,-298,-69" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtml" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,120,0,-120" Text="Milliliter"/>
+            		<TextBox x:Name="tbml" HorizontalAlignment="Left" Height="72" Margin="166,104,-298,-129" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txttsp" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,180,0,-180" Text="Teaspoon"/>
+            		<TextBox x:Name="tbtsp" HorizontalAlignment="Left" Height="72" Margin="166,164,-298,-189" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txttbp" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,240,0,-240" Text="Tablespoon"/>
+            		<TextBox x:Name="tbtbp" HorizontalAlignment="Left" Height="72" Margin="166,224,-298,-249" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtob" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,300,0,-300" Text="Oil barrel"/>
+            		<TextBox x:Name="tbob" HorizontalAlignment="Left" Height="72" Margin="166,284,-298,-309" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtukg" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,360,0,-360">
+            			<Run Text="UK gallon"/>
+            			<LineBreak/>
+            			<Run/>
+            			<LineBreak/>
+            			<Run/>
+            		</TextBlock>
+            		<TextBox x:Name="tbukg" HorizontalAlignment="Left" Height="72" Margin="166,344,-298,-369" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtusg" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,419,0,-419">
+            			<Run Text="US gallon"/>
+            			<LineBreak/>
+            			<Run/>
+            			<LineBreak/>
+            			<Run/>
+            		</TextBlock>
+            		<TextBox x:Name="tbusg" HorizontalAlignment="Left" Height="72" Margin="166,403,-298,-428" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            	</Grid>
+            </phone:PivotItem>
+            <phone:PivotItem x:Name="Energy" Header="Energy">
+            	<Grid Margin="0,0,308,556">
+            		<TextBlock x:Name="txtJ" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Text="Joule"/>
+            		<TextBox x:Name="tbJ" HorizontalAlignment="Left" Height="72" Margin="166,-16,-298,-9" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtCl" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,60,0,-60">
+            			<Run Text="Calorie"/>
+            			<LineBreak/>
+            			<Run/>
+            			<LineBreak/>
+            			<Run/>
+            		</TextBlock>
+            		<TextBox x:Name="tbCl" HorizontalAlignment="Left" Height="72" Margin="166,44,-298,-69" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtFp" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,120,0,-120" Text="Foot pound"/>
+            		<TextBox x:Name="tbFp" HorizontalAlignment="Left" Height="72" Margin="166,104,-298,-129" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            	</Grid>
+            	<!--Double line list no text wrapping-->
+            </phone:PivotItem>
+            <phone:PivotItem x:Name="Angle" Header="Angle">
+	<!--Double line list no text wrapping-->
+            	<Grid Margin="0,0,308,556">
+            		<TextBlock x:Name="txtDg" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Text="Degree"/>
+            		<TextBox x:Name="tbDg" HorizontalAlignment="Left" Height="72" Margin="166,-16,-298,-9" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtRd" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,60,0,-60">
+            			<Run Text="Radian"/>
+            			<LineBreak/>
+            			<Run/>
+            			<LineBreak/>
+            			<Run/>
+            		</TextBlock>
+            		<TextBox x:Name="tbRd" HorizontalAlignment="Left" Height="72" Margin="166,44,-298,-69" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtGd" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,120,0,-120" Text="Gradian"/>
+            		<TextBox x:Name="tbGd" HorizontalAlignment="Left" Height="72" Margin="166,104,-298,-129" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            	</Grid>
+            </phone:PivotItem>
+            <phone:PivotItem x:Name="Pressure" Header="Pressure">
+	<!--Double line list no text wrapping-->
+            	<Grid Margin="0,0,308,556">
+            		<TextBlock x:Name="txtBr" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Text="Bar"/>
+            		<TextBox x:Name="tbBr" HorizontalAlignment="Left" Height="72" Margin="166,-16,-298,-9" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtAt" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,60,0,-60">
+            			<Run Text="Atmosphere"/>
+            			<LineBreak/>
+            			<Run/>
+            			<LineBreak/>
+            			<Run/>
+            		</TextBlock>
+            		<TextBox x:Name="tbAt" HorizontalAlignment="Left" Height="72" Margin="166,44,-298,-69" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtPs" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,120,0,-120" Text="Pascal"/>
+            		<TextBox x:Name="tbPs" HorizontalAlignment="Left" Height="72" Margin="166,104,-298,-129" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtKPs" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,180,0,-180" Text="Kilo pascal"/>
+            		<TextBox x:Name="tbKPs" HorizontalAlignment="Left" Height="72" Margin="166,164,-298,-189" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtTr" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,240,0,-240" Text="Torr"/>
+            		<TextBox x:Name="tbTr" HorizontalAlignment="Left" Height="72" Margin="166,224,-298,-249" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            	</Grid>
+            </phone:PivotItem>
+            <phone:PivotItem x:Name="Data" Header="Data">
+            	<Grid HorizontalAlignment="Left" Height="603" VerticalAlignment="Top" Width="456">
+            		<TextBlock x:Name="txtB" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Bit" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667"/>
+            		<TextBox x:Name="tbB" HorizontalAlignment="Left" Height="72" Margin="166,-16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtBy" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,60,0,0">
+            			<Run Text="Byte"/>
+            			<LineBreak/>
+            			<Run/>
+            		</TextBlock>
+            		<TextBox x:Name="tbBy" HorizontalAlignment="Left" Height="72" Margin="166,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtKb" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Kilobit" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,119,0,0"/>
+            		<TextBox x:Name="tbKb" HorizontalAlignment="Left" Height="72" Margin="166,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtKby" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,180,0,0">
+            			<Run Text="Kilobyte"/>
+            			<LineBreak/>
+            			<Run/>
+            		</TextBlock>
+            		<TextBox x:Name="tbKby" HorizontalAlignment="Left" Height="72" Margin="166,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtMb" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Megabit" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,240,0,0"/>
+            		<TextBox x:Name="tbMb" HorizontalAlignment="Left" Height="72" Margin="166,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtMby" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Megabyte" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,300,0,0"/>
+            		<TextBox x:Name="tbMby" HorizontalAlignment="Left" Height="72" Margin="166,284,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtGb" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Gigabyte" VerticalAlignment="Top" Height="47" Width="166" FontSize="26.667" Margin="0,360,0,0"/>
+            		<TextBox x:Name="tbGb" HorizontalAlignment="Left" Height="72" Margin="166,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtTb" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Terabyte" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,420,0,0"/>
+            		<TextBox x:Name="tbTb" HorizontalAlignment="Left" Height="72" Margin="166,404,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            		<TextBlock x:Name="txtPb" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Petabyte" VerticalAlignment="Top" Height="47" Width="148" FontSize="26.667" Margin="0,480,0,0"/>
+            		<TextBox x:Name="tbPb" HorizontalAlignment="Left" Height="72" Margin="166,464,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" InputScope="Number"/>
+            	</Grid>
+            	<!--Double line list with text wrapping-->
+            </phone:PivotItem>
+        </phone:Pivot>
+
+        <!--Uncomment to see an alignment grid to help ensure your controls are
+            aligned on common boundaries.  The image has a top margin of -32px to
+            account for the System Tray. Set this to 0 (or remove the margin altogether)
+            if the System Tray is hidden.
+
+            Before shipping remove this XAML and the image itself.-->
+        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" IsHitTestVisible="False" />-->
+    </Grid>
+
+</phone:PhoneApplicationPage>

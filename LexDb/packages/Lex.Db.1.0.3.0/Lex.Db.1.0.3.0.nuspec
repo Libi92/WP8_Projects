@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Lex.Db</id>
+    <version>1.0.3.0</version>
+    <title>Lex DB</title>
+    <authors>Lex Lavnikov</authors>
+    <owners>Lex Lavnikov</owners>
+    <licenseUrl>https://raw.github.com/demigor/lex.db/master/License.txt</licenseUrl>
+    <projectUrl>https://github.com/demigor/lex.db</projectUrl>
+    <iconUrl>http://lexblog.azurewebsites.net/wp-content/uploads/2012/12/lexdb32.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Features: 
+* Supports isolated storage, files &amp; local app data folders.
+* Table structure auto-upgrade
+* Concurrent database access (SL OOB multiple instance support)
+* RBT Indexes
+* Lazy loading</description>
+    <summary>Superfast, lightweight (~100K), POCO database for WP8+ &amp; WinRT, .NET4+, Silverlight 5+,  platforms.</summary>
+    <releaseNotes />
+    <copyright>Alexey Lavnikov</copyright>
+    <language>en-US</language>
+    <dependencies>
+      <group targetFramework="Silverlight5.0">
+        <dependency id="Microsoft.CompilerServices.AsyncTargetingPack" version="1.0.0" />
+      </group>
+      <group targetFramework=".NETFramework4.0">
+        <dependency id="Microsoft.CompilerServices.AsyncTargetingPack" version="1.0.0" />
+      </group>
+      <group targetFramework=".NETFramework4.5" />
+    </dependencies>
+    <references>
+      <reference file="Lex.Db.dll" />
+    </references>
+  </metadata>
+</package>

@@ -1,0 +1,47 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+    x:Class="University_Feeds.Page3"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+    <phone:PhoneApplicationPage.Background>
+        <ImageBrush Stretch="Fill" ImageSource="login1.jpg"/>
+    </phone:PhoneApplicationPage.Background>
+    <Canvas HorizontalAlignment="Left" Height="758" Margin="0,10,0,0" VerticalAlignment="Top" Width="480">
+        <Canvas.Background>
+            <ImageBrush Stretch="Fill" ImageSource="images/login1.jpg"/>
+        </Canvas.Background>
+        <Grid Height="352" Canvas.Left="10" Canvas.Top="221" Width="460">
+            <TextBlock HorizontalAlignment="Left" Height="37" Margin="10,30,0,0" TextWrapping="Wrap" Text="User Name" VerticalAlignment="Top" Width="142" Foreground="#FF550A0A" FontSize="26.667"/>
+            <TextBox HorizontalAlignment="Left" Height="70" Margin="157,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="293" InputScope="EmailUserName" Canvas.ZIndex="-10"/>
+            <TextBlock HorizontalAlignment="Left" Height="36" Margin="10,102,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="142" Foreground="#FF550A0A" FontSize="26.667"/>
+            <Button x:Name="loginBtn" Content="Login" HorizontalAlignment="Left" Margin="320,220,0,0" VerticalAlignment="Top" Background="#FFD69C9C" Click="loginBtn_Click">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <ec:NavigateToPageAction TargetPage="/MainPage.xaml"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            <Button x:Name="signupBtn" Content="Sign up" HorizontalAlignment="Left" Margin="182,220,0,0" VerticalAlignment="Top" Background="#FFD69C9C">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <ec:NavigateToPageAction TargetPage="/Signup.xaml"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            <PasswordBox HorizontalAlignment="Left" Margin="157,87,0,0" VerticalAlignment="Top" Width="293"/>
+        </Grid>
+    </Canvas>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+
+</phone:PhoneApplicationPage>
